@@ -1,0 +1,5 @@
+loan:
+  minimalIncome: 40000
+  minimumCarPrice: 1000000
+  percentFromIncome: 0.5
+  percentFromCarPrice: 0.3
