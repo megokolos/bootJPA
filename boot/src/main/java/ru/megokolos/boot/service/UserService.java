@@ -2,6 +2,7 @@ package ru.megokolos.boot.service;
 
 
 
+import ru.javamentor.UserDTO.UserDTO;
 import ru.megokolos.boot.model.User;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface UserService {
     List<User> getUserByCarModelAndSeries(String model, int series);
 
     User getUserById(Long id);
+
+    User convertToUser(UserDTO userDTO);
 }

@@ -1,10 +1,12 @@
 package ru.megokolos.boot.service;
 
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ru.javamentor.UserDTO.UserDTO;
 import ru.megokolos.boot.model.User;
 import ru.megokolos.boot.repositories.UserRepository;
 
@@ -16,9 +18,12 @@ public class UserServiceImp implements UserService {
 
     private final UserRepository userRepository;
 
+    private final ModelMapper modelMapper;
+
     @Autowired
-    public UserServiceImp(UserRepository userRepository) {
+    public UserServiceImp(UserRepository userRepository, ModelMapper modelMapper) {
         this.userRepository = userRepository;
+        this.modelMapper=modelMapper;
     }
 
     @Transactional
@@ -37,6 +42,11 @@ public class UserServiceImp implements UserService {
 
     public User getUserById(Long id) {
         return userRepository.findById(id).get();
+    }
+
+    @Override
+    public User convertToUser(UserDTO userDTO) {
+        return modelMapper.map(userDTO, User.class);
     }
 
 }
