@@ -16,4 +16,12 @@ public class CarProperties {
     public void init() {
         System.out.println("✅ CarProperties loaded! maxCar = " + maxCar);
     }
+
+    public int getMaxCar() {
+        return maxCar;
+    }
+
+    public void setMaxCar(int maxCar) {
+        this.maxCar = maxCar;
+    }
 }

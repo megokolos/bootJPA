@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.megokolos.boot.model.Car;
 import ru.megokolos.boot.properties.CarProperties;
 import ru.megokolos.boot.repositories.CarRepository;
+
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -22,10 +24,25 @@ public class CarServiceImp implements CarService{
 
     @Transactional
     @Override
-    public List<Car> listCars(Integer numberOfCars) {
+    public List<Car> listCars(Integer numberOfCars, String field) {
         if (numberOfCars == null || numberOfCars > carProperties.getMaxCar()) {
             numberOfCars=carProperties.getMaxCar();
         }
-        return carRepository.findAll().stream().limit(numberOfCars).toList();
+        if (field==null) {
+            return carRepository.findAll().stream().limit(numberOfCars).toList();
+        }
+        switch (field) {
+            case "model" -> {
+                return carRepository.findAll().stream().limit(numberOfCars)
+                        .sorted(Comparator.comparing(Car::getModel)).toList();
+            }
+            case "price" -> {
+                return carRepository.findAll().stream().limit(numberOfCars)
+                        .sorted(Comparator.comparing(Car::getPrice)).toList();
+            }
+            default -> {
+                throw new RuntimeException("Bad Form");
+            }
+        }
     }
 }
