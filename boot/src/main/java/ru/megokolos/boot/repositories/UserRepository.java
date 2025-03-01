@@ -9,7 +9,5 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    List<User> findAllByCar_ModelAndCar_Series(String model, int series);
-
     List<User> findAllByCarModelAndCarSeries(String model, int series);
 }

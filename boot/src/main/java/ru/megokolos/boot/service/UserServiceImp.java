@@ -37,7 +37,7 @@ public class UserServiceImp implements UserService {
 
 
     public List<User> findAllByCarModelAndCarSeries(String model, int series) {
-        return userRepository.findAllByCar_ModelAndCar_Series(model, series);
+        return userRepository.findAllByCarModelAndCarSeries(model, series);
     }
 
     public User getUserById(Long id) {
