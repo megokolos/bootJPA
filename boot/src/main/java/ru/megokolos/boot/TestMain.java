@@ -12,7 +12,6 @@ public class TestMain {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(BootApplication.class, args);
 
-        // Получаем бин UserService
         UserService userService = context.getBean(UserService.class);
 
         Car car1 = new Car("audi", 80);
