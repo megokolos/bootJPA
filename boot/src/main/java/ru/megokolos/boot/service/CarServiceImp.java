@@ -7,7 +7,7 @@ import ru.megokolos.boot.model.Car;
 import ru.megokolos.boot.properties.CarProperties;
 import ru.megokolos.boot.repositories.CarRepository;
 
-import java.util.Comparator;
+
 import java.util.List;
 
 @Service
