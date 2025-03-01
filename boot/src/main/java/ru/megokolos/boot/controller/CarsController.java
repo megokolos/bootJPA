@@ -13,7 +13,7 @@ import ru.megokolos.boot.service.CarService;
 @Controller
 public class CarsController {
     @Autowired
-    CarService carService;
+    private CarService carService;
 
     @GetMapping("/cars")
     public String getCars(@RequestParam(value = "count", required = false) Integer count,

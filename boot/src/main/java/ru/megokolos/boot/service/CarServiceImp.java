@@ -12,14 +12,14 @@ import java.util.List;
 
 @Service
 public class CarServiceImp implements CarService {
-    @Autowired
-    private CarProperties carProperties;
 
+    private final CarProperties carProperties;
     private final CarRepository carRepository;
 
     @Autowired
-    public CarServiceImp(CarRepository carRepository) {
+    public CarServiceImp(CarRepository carRepository, CarProperties carProperties) {
         this.carRepository = carRepository;
+        this.carProperties = carProperties;
     }
 
     @Transactional
