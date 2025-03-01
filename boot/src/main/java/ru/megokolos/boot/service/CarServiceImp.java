@@ -29,16 +29,11 @@ public class CarServiceImp implements CarService{
             numberOfCars=carProperties.getMaxCar();
         }
         if (field==null) {
-            return carRepository.findAll().stream().limit(numberOfCars).toList();
+            return carRepository.findFirstN(numberOfCars);
         }
         switch (field) {
-            case "model" -> {
-                return carRepository.findAll().stream().limit(numberOfCars)
-                        .sorted(Comparator.comparing(Car::getModel)).toList();
-            }
-            case "price" -> {
-                return carRepository.findAll().stream().limit(numberOfCars)
-                        .sorted(Comparator.comparing(Car::getPrice)).toList();
+            case "model", "price" -> {
+                return carRepository.findFirstNSortedByField(numberOfCars, field);
             }
             default -> {
                 throw new RuntimeException("Bad Form");

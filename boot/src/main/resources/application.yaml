@@ -14,3 +14,10 @@ spring:
       ddl-auto: update
   config:
     import: classpath:car.yaml, classpath:loan.yaml
+#car:
+#  maxCar: 15
+#loan:
+#  minimalIncome: 40000
+#  minimumCarPrice: 1000000
+#  percentFromIncome: 0.5
+#  percentFromCarPrice: 0.3
