@@ -7,7 +7,9 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @RequiredArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,17 +1,16 @@
 package ru.megokolos.boot.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
 @RequiredArgsConstructor
-@Data
+@Getter
+@Setter
+@ToString
 public class User {
 
     @Id
