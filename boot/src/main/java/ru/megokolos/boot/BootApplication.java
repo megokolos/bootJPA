@@ -17,6 +17,7 @@ import java.util.Arrays;
 @SpringBootApplication
 @EnableConfigurationProperties({CarProperties.class, LoanProperties.class})
 public class BootApplication {
+
 	public static void main(String[] args) {
 		SpringApplication.run(BootApplication.class, args);
 	}

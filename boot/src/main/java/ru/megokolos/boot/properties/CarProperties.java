@@ -13,8 +13,4 @@ import java.util.List;
 public class CarProperties {
     private int maxCar;
     private List<String> sortFields;
-    @PostConstruct
-    public void init() {
-        System.out.println("✅ CarProperties loaded! maxCar = " + maxCar);
-    }
 }
