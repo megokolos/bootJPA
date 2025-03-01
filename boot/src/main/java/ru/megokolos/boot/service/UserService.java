@@ -12,7 +12,7 @@ public interface UserService {
 
     List<User> listUsers();
 
-    List<User> getUserByCarModelAndSeries(String model, int series);
+    List<User> findAllByCarModelAndCarSeries(String model, int series);
 
     User getUserById(Long id);
 
