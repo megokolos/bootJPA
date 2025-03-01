@@ -3,9 +3,8 @@ package ru.megokolos.boot.properties;
 
 import jakarta.annotation.PostConstruct;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+
 
 
 @ConfigurationProperties(prefix = "car")
@@ -15,13 +14,5 @@ public class CarProperties {
     @PostConstruct
     public void init() {
         System.out.println("✅ CarProperties loaded! maxCar = " + maxCar);
-    }
-
-    public int getMaxCar() {
-        return maxCar;
-    }
-
-    public void setMaxCar(int maxCar) {
-        this.maxCar = maxCar;
     }
 }
