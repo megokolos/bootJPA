@@ -8,9 +8,8 @@ import ru.megokolos.boot.model.User;
 import ru.megokolos.boot.properties.LoanProperties;
 
 
-
 @Service
-public class LoanServiceImp implements LoanService{
+public class LoanServiceImp implements LoanService {
 
     private final LoanProperties loanProperties;
     private final UserService userService;

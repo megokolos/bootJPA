@@ -9,6 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class LoanProperties {
     private int minimalIncome;
     private int minimumCarPrice;
-    private  double percentFromIncome;
-    private  double percentFromCarPrice;
+    private double percentFromIncome;
+    private double percentFromCarPrice;
 }

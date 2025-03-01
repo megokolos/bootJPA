@@ -21,8 +21,8 @@ public class CarsController {
                           Model model) {
         try {
             model.addAttribute("cars", carService.listCars(count, fieldForSorting));
-        } catch (RuntimeException e){
-             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        } catch (RuntimeException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
         return "cars";
     }

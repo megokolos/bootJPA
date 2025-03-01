@@ -13,7 +13,7 @@ import ru.megokolos.boot.repositories.UserRepository;
 import java.util.List;
 
 @Service
-@Transactional (readOnly = true)
+@Transactional(readOnly = true)
 public class UserServiceImp implements UserService {
 
     private final UserRepository userRepository;
@@ -23,7 +23,7 @@ public class UserServiceImp implements UserService {
     @Autowired
     public UserServiceImp(UserRepository userRepository, ModelMapper modelMapper) {
         this.userRepository = userRepository;
-        this.modelMapper=modelMapper;
+        this.modelMapper = modelMapper;
     }
 
     @Transactional

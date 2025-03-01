@@ -10,14 +10,14 @@ import ru.megokolos.boot.model.Car;
 import java.util.List;
 
 @Repository
-public interface CarRepository extends JpaRepository <Car, Long> {
+public interface CarRepository extends JpaRepository<Car, Long> {
 
     default List<Car> findFirstN(int limit) {
         Pageable pageable = PageRequest.of(0, limit);
         return findAll(pageable).getContent();
     }
 
-    default List<Car> findFirstNSortedByField(int n, String field){
+    default List<Car> findFirstNSortedByField(int n, String field) {
         Sort sort = Sort.by(Sort.Direction.ASC, field);
         Pageable pageable = PageRequest.of(0, n, sort);
         return findAll(pageable).getContent();
