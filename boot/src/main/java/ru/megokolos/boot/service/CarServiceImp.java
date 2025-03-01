@@ -31,13 +31,9 @@ public class CarServiceImp implements CarService{
         if (field==null) {
             return carRepository.findFirstN(numberOfCars);
         }
-        switch (field) {
-            case "model", "price" -> {
-                return carRepository.findFirstNSortedByField(numberOfCars, field);
-            }
-            default -> {
-                throw new RuntimeException("Bad Form");
-            }
+        if (!carProperties.getSortFields().contains(field)) {
+            throw new RuntimeException("Invalid field: " + field);
         }
+        return carRepository.findFirstNSortedByField(numberOfCars, field);
     }
 }

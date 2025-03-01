@@ -14,6 +14,9 @@ spring:
       ddl-auto: update
 car:
   maxCar: 15
+  sort-fields:
+    - model
+    - price
 loan:
   minimalIncome: 40000
   minimumCarPrice: 1000000
