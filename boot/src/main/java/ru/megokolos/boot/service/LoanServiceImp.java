@@ -16,15 +16,18 @@ import java.util.Objects;
 @Service
 public class LoanServiceImp implements LoanService{
 
-    @Autowired
-    LoanProperties loanProperties;
+    private final LoanProperties loanProperties;
+
+    private final UserService userService;
+
+    private final IncomeClient incomeClient;
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
-    private IncomeClient incomeClient;
-
+    public LoanServiceImp(LoanProperties loanProperties, UserService userService, IncomeClient incomeClient) {
+        this.loanProperties = loanProperties;
+        this.userService = userService;
+        this.incomeClient = incomeClient;
+    }
 
     @Override
     public String getLoan(Long id) {

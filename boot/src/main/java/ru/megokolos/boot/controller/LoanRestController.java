@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.megokolos.boot.service.LoanService;
 
 @RestController
-public class RestLoanController {
+public class LoanRestController {
+    
     @Autowired
     private LoanService loanService;
-
-
 
     @RequestMapping("/loan/{userId}")
     public String getLoanSum(@PathVariable("userId") Long id) {
